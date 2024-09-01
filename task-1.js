@@ -1,10 +1,8 @@
-const name = '«Генератор защитного поля»';
-let price = 1000;
-const firstMessage = `Выбран ${name}, цена за штуку ${price} кредитов`;
+function makeTransaction(quantity, pricePerDroid) {
+	const totalPrice = quantity * pricePerDroid;
+	return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+}
 
-price = 2000;
-const secondMessage = `Выбран ${name}, цена за штуку ${price} кредитов`;
-
-console.log(firstMessage);
-
-console.log(secondMessage);
+console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
+console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
+console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"

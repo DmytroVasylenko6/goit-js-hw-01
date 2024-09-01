@@ -1,20 +1,12 @@
-const userPassword = 'jqueryismyjam';
-
-const ADMIN_PASSWORD = 'jqueryismyjam';
-
-const CANCELED_BY_USER = 'Отменено пользователем!';
-const ACCESS_IS_ALLOWED = 'Добро пожаловать!';
-const ACCESS_DENIED = 'Доступ запрещен, неверный пароль!';
-let message;
-
-if (userPassword != null) {
-  if (userPassword === ADMIN_PASSWORD) {
-    message = ACCESS_IS_ALLOWED;
-  } else {
-    message = ACCESS_DENIED;
-  }
-} else {
-  message = CANCELED_BY_USER;
+function getElementWidth(content, padding, border) {
+  const contentWidth = parseFloat(content);
+  const paddingWidth = parseFloat(padding) * 2;
+  const borderWidth = parseFloat(border) * 2;
+  
+  const totalWidth = contentWidth + paddingWidth + borderWidth;
+  return totalWidth;
 }
 
-console.log(message);
+console.log(getElementWidth("50px", "8px", "4px")); // 74
+console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+console.log(getElementWidth("200px", "0px", "0px")); // 200
